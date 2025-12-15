@@ -1,4 +1,5 @@
 import { postCard } from '@/Type'
+import { urlFor } from '@/lib/sainty'
 import Image from 'next/image'
 
 
@@ -6,7 +7,7 @@ const PostCard = ({ coverImage, title, autherImage, autherName, catogray, date }
   return (
     <div className='max-w-98 max-h-120 p-4 rounded-[12px] border border-secondray-100 dark:border-[#242536] flex flex-col gap-y-4'>
       {/* Cover */}
-      <Image src={coverImage} width={360} height={240} alt='Cover Image' className=' object-fill aspect-video' />
+      <Image src={urlFor(coverImage).url()} width={360} height={240} alt='Cover Image' className=' object-fill aspect-video' />
 
       <span className='body-5 font-medium px-2.5 py-1 bg-brand/5 text-brand rounded-[6px] max-w-fit'>{catogray}</span>
 
@@ -15,7 +16,7 @@ const PostCard = ({ coverImage, title, autherImage, autherName, catogray, date }
       {/* Short Info */}
       <div className='flex items-center gap-5'>
         <div className='flex items-center gap-3'>
-          <Image src={autherImage} width={36} height={36} alt={`${autherName} image`} />
+          <Image src={urlFor(autherImage).url()} width={36} height={36} alt={`${autherName} image`} className=" rounded-full" />
           <h4 className='body-4 text-secondray-400'>{autherName}</h4>
         </div>
 
