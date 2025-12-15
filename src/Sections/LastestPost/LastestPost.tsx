@@ -1,38 +1,30 @@
-import { blogs } from '@/Content'
+import {  blogProps } from '@/Type'
 import PostCard from '@/components/PostCard'
 import { Button } from '@/components/ui/button'
 
 
-
-
-function LastestPost() {
+export default function LastestPost({ blog }: { blog: blogProps[] }) {
   return (
     <div className='max-wrapper min-h-full py-8'>
       <h2 className='heading-3 text-center'>Lastest Post</h2>
-      {/* blogs */}
       <div className='flex justify-center items-center'>
-        {/* Title */}
-        <div className='grid grid-cols-1  md:grid-cols-2  py-8 gap-5'>
-          {blogs.map((blog) => (
+        <div className='grid grid-cols-1 md:grid-cols-2 py-8 gap-5'>
+          {blog.map((post) => (
             <PostCard
-              key={blog.id}
-              coverImage={blog.cover}
-              catogray={blog.catogray}
-              title={blog.title}
-              autherImage={blog.autherimage}
-              autherName={blog.authername}
-              date={blog.date} />
+              key={post.currentslug}
+              coverImage={post.coverImage}
+              catogray={post.category}
+              title={post.title}
+              autherImage={post.authorImage}
+              autherName={post.authorName}
+              date={post.date}
+            />
           ))}
-
         </div>
       </div>
       <div className='flex items-center justify-center'>
-        <Button
-          size={"md"}
-          variant={"ghost"}>View All</Button>
+        <Button size="md" variant="ghost">View All</Button>
       </div>
     </div>
   )
 }
-
-export default LastestPost

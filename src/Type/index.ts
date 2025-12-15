@@ -6,3 +6,14 @@ export interface postCard{
     autherName: string,
     date: string,
 }
+
+
+export interface blogProps {
+  currentslug: string;
+  coverImage: string;
+  category: string;
+  title: string;
+  authorImage: string;
+  authorName: string;
+  date: string;
+}
