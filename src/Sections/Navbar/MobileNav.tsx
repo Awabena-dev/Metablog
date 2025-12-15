@@ -1,3 +1,4 @@
+import SearchBox from "@/components/SearchBox"
 import { Switch } from "@/components/ui/switch"
 import { cn } from "@/lib/utils"
 import { ArrowBigLeft, Search } from "lucide-react"
@@ -30,19 +31,13 @@ const MobileNav = ({ navLinks, theme, switchThem , toggle , isOpen }: MobileNavP
         <ArrowBigLeft onClick={() => toggle()} className="cursor-pointer text-secondary-800 hover:fill-secondary-800 transition-all duration-300" />
 
         {/* Search Box */}
-        <div className="flex items-center pl-4 py-2 pr-2 bg-secondary rounded-md w-full">
-          <input
-            type="text"
-            placeholder="Search…"
-            className="flex-1 bg-transparent outline-none text-sm" />
-          <Search className="size-4 opacity-70" />
-        </div>
+        <SearchBox />
       </div>
 
       {/* Nav Links */}
       <ul className="flex flex-col gap-y-4 mt-6 text-sm font-medium">
         {navLinks.map((link) => (
-          <li key={link.id} className="text-[16px] font-medium">
+          <li key={link.id} className="text-2xl font-medium">
             <Link href={link.path} className="hover:opacity-70 transition">
               {link.name}
             </Link>

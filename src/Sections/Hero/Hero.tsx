@@ -5,7 +5,7 @@ import React from 'react'
 // 4B6BFB
 const Hero = () => {
   return (
-    <div className='max-wrapper pb-20'>
+    <div className='max-wrapper pt-30 pb-20'>
         <div className='relative h-150 max-h-150 w-full bg-[url("/Cover/1.png")] rounded-[12px] bg-center bg-cover'>
             {/* Card */}
             <div className=' absolute md:-bottom-7 md:left-7 left-1/2 -bottom-7 md:translate-x-0 -translate-x-1/2 md:max-w-150 w-[80%] bg-background rounded-[12px] border border-sec-gray p-4 md:p-10 shadow-md' >
