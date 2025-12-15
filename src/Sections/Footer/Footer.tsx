@@ -1,5 +1,7 @@
+'use client'
 import Logo from "@/components/Logo"
 import SubForm from "@/components/SubForm"
+import { useTheme } from "next-themes"
 import Link from "next/link"
 
 
@@ -25,6 +27,9 @@ const quickLinks = [
 ]
 
 const Footer = () => {
+
+    const { theme } = useTheme()
+     
     return (
         <div className='bg-secondray-50 dark:bg-secondray-900 w-full py-16 mt-30'>
             {/* up content */}
@@ -71,7 +76,7 @@ const Footer = () => {
             {/* Down Content */}
             <div className="max-wrapper flex items-center justify-between pt-8 mt-8 border-t border-secondray-100">
                 <div>
-                    <Logo theme='light' className="w-15 h-10 md:w-59.5 md:h-8" />
+                    <Logo theme={theme} className="w-15 h-10 md:w-59.5 md:h-8" />
                 </div>
                 <ul className="flex items-center gap-x-6">
                     <li className="body-3">Terms Of Us</li>
